@@ -1,0 +1,201 @@
+body {
+    background: #222;
+    font-family: Arial, sans-serif;
+}
+.contenedor-proceso{
+    background: linear-gradient(to bottom, #0A0223, #ffffff);
+    
+}
+.container {
+    height: 800px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.linea-blanca {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px; /* Grosor de la línea */
+    height: calc(100% - 10px); /* Altura igual al 100% menos el grosor de la línea */
+    background-color: white; 
+    z-index: 0; /* Para colocarla detrás de otros elementos */
+    border-radius: 10px;
+}
+
+.container .contenido 
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 10px;
+    margin: 0 -160px;
+    z-index: 2;  /* Para colocarla delante de otros elementos */
+
+}
+
+.container:hover .contenido {
+    transform: rotate(0deg);
+    margin: 0 10px;
+}
+
+/*CONTENEDOR TIPO MAC*/
+.mac-desktop {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transform: translateY(-50px) translateX(-15px) rotate(0deg) scale(.9);
+}
+
+.mac-desktop .mac-menu-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px 10px;
+    box-sizing: border-box;
+}
+.mac-desktop .imagen img {
+    max-width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.container .mac-desktop .mac-menu-bar .mac-button {
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+    border-radius: 50%;
+    
+}
+
+.mac-red {
+    background-color: #ff5f57;
+}
+
+.mac-yellow {
+    background-color: #ffbd2e;
+}
+
+.mac-green {
+    background-color: #28c940;
+}
+
+/*CONTENIDO ESCRITO*/
+
+.container .content {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
+}
+
+
+.container .content .parrafo 
+{    
+    padding: 20px;
+}
+
+/*CONTENIDO DE LISTADO*/
+.content-list .list 
+{
+    width: 220px;
+    height: 80px;
+    padding: 20px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    border-radius: 10px;
+    background: #0A0223;
+    color: #3EB9FA;
+    transform: translateY(-30px);
+    font-size: 13px;  
+}
+.content-list ul
+{
+    padding: 5px;
+    list-style-type: none;
+}
+
+.content-list .list li {
+    margin-bottom: 10px;
+} 
+
+.content-list .fa-circle-check {
+    margin-right: 10px;
+    font-size: 18px; 
+}
+
+.content-list .numero {
+    position: relative; 
+    width: 70px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3EB9FA;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #fff;
+    top: -80%; 
+    left: -97px;
+    transform: translateY(-90px) translateX(-27px) rotate(0deg) scale(.9);
+}
+
+/*CUANDO HACE HOVER*/
+
+/*inicia no mostrandose*/
+.container:hover .mac-desktop .mac-menu-bar .mac-button
+{
+    width: 13px;
+    height: 13px;
+}
+.container:hover .mac-desktop
+{
+    width: 540px;
+    height: 310px;
+    transform: translateY(-80px) translateX(250px) rotate(0deg) scale(.9);
+}
+
+.list{
+    visibility: hidden;
+    opacity: 0;
+}
+
+/*mostramos el contenedor del listado*/
+
+.container:hover .content-list .list 
+{  
+    transition: 0.5s;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-30px) translateX(-65px);
+}
+
+/*ocultamos el contenedor del numero*/
+.container:hover .content-list .numero {
+    visibility: hidden;
+    opacity: 0;
+}
+
+
